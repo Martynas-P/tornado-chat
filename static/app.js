@@ -13,7 +13,7 @@ angular.module('chatApp', [])
 
             if (message.username) {
                 $scope.username = message.username;
-            } else if (message.from &&  message.message) {
+            } else if (message.from && message.message) {
                 $scope.messages.push(message);
             }
 
@@ -21,9 +21,6 @@ angular.module('chatApp', [])
         };
 
         $scope.sendMessage = function sendMessage() {
-            console.log('clicked');
-            console.log($scope.newMessage);
-
             if ($scope.newMessage) {
                 socket.send($scope.newMessage);
             }
